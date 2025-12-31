@@ -20,7 +20,7 @@ Core functionalities are powered by **Google Cloud Vertex AI** and **ElevenLabs*
 3. Scroll to **Assets**.
 4. Download **ai-browsing-companion-1.0.0.Setup.exe**.
 
-> **Note:** If Windows displays a security warning, click **More info**, then **Run anyway**.  
+> **Note:** This installer is only for **Windows**. If Windows displays a security warning, click **More info**, then **Run anyway**.  
 > This warning may appear because the application is not code-signed.
 
 ---
