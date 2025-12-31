@@ -1,0 +1,159 @@
+:root {
+    --primary-color: rgba(0, 0, 255, 0.5);
+    --secondary-color: rgba(255, 255, 255, 1);
+    --tertiary-color: rgba(0, 0, 255, 0.7);
+}
+
+@font-face {
+    font-family: 'Manrope';                  
+    src: url('../../assets/fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;                        
+    font-style: normal;                       
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope';
+}
+
+button {
+    all: unset;           
+    display: inline-flex; 
+    align-items: center;  
+    justify-content: center;
+    box-sizing: border-box; 
+}
+
+#browser-bar {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 1rem 1rem 0;
+}
+
+.browser-actions-icon {
+    height: 40%;
+    stroke: var(--secondary-color);
+}
+
+.browser-actions-icon.minimize-icon {
+    width: 40%;
+}
+
+.browser-actions-icon.close-tab-icon {
+    width: 10px;
+}
+
+.browser-actions-icon.add-tab-icon {
+    stroke: var(--tertiary-color);
+    width: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.tool-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.app-title {
+    flex-grow: 1;
+    display: flex;               
+    align-items: center;         
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.browser-actions-button {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    box-shadow: inset 0 0.25rem 0.25rem rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
+}
+
+.buttons-left, .buttons-right {
+    display: flex;
+    gap: 1rem;
+    padding: 0.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--primary-color);
+    -webkit-app-region: no-drag; 
+}
+
+.browser-actions-button:hover {
+    background-color: var(--tertiary-color); 
+    box-shadow: inset 0 0.3rem 0.3rem rgba(0,0,0,0.3);
+}
+
+.tab-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem 0 0;
+    padding: 0.3rem;
+    border: 1px solid #000000;
+    border-radius: 8px;
+
+    /* Horizontal Scrolling */
+    overflow-x: auto;  
+    scroll-behavior: smooth;
+    scrollbar-width: none;   
+    
+    -ms-overflow-style: none;  
+    -webkit-app-region: no-drag; 
+}
+
+.tab-bar::-webkit-scrollbar {
+    display: none;                
+}
+
+.tabs-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 90%;
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3px;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid black;
+    border-radius: 4px;
+
+    flex: 1 1 20%;          /* flex-grow:1, flex-shrink:1, flex-basis:20% */
+    min-width: 6rem;        
+    max-width: 20%;  
+}
+
+.tab .tab-name p {
+    font-size: 0.9rem;
+}
+
+.tab-name {
+    max-width: 80%;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.tab.inactive {
+    opacity: 0.3;
+}
+
+.add-tab-icon:hover {
+    transform: translate(-1px, -1px);
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        display: none;
+    }
+}

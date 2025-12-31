@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../assets/fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../assets/fonts/Manrope-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HubotSans';
+    src: url('../../assets/fonts/HubotSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+button {
+    all: unset;           
+    display: inline-flex; 
+    align-items: center;  
+    justify-content: center;
+    box-sizing: border-box; 
+}
+
+body {
+    overflow: hidden;
+}
+
+.app-bar {
+    display: flex;
+    flex-direction: row;
+    /* width: clamp(220px, 20vw, 320px); */
+    width: 320px;
+    gap: 10px;
+    scrollbar-width: none;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.app-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* MENU STYLING */
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu button {
+    /* width: clamp(3.6rem, 7.5vw, 4.5rem); */
+    /* height: clamp(5rem, 9vh, 6.2rem); */
+    width: 4.5rem;
+    height: 6.2rem;
+    background-color: #ffffff;
+}
+
+.menu button:first-child {
+    border-top: 1px solid black;
+    border-top-left-radius: 10px;  
+    border-top-right-radius: 10px; 
+}
+
+.menu .logs-button {
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 10px;  
+    border-bottom-right-radius: 10px; 
+}
+
+.tool-bar-menu-icon {
+    /* width: clamp(1.8rem, 3.4vw, 2.2rem); */
+    width: 2.2rem;
+    fill: black;
+}
+
+.tool-bar-menu-icon.logs-icon {
+    /* width: clamp(1.6rem, 3vw, 2rem); */
+    width: 2rem;
+    fill: white;
+    stroke: black; 
+}
+
+/* MENU BUTTON HOVER */
+.menu button:hover {
+    background-color: #000000;
+}
+
+.menu button:hover .tool-bar-menu-icon {
+    fill: white;
+}
+
+.menu button:hover .tool-bar-menu-icon.logs-icon {
+    fill: black;
+    stroke: white; 
+}
+
+/* MENU BUTTON ACTIVE STATE */
+.menu button.button-selected {
+    background-color: #000000;
+}
+
+.menu button.button-selected .tool-bar-menu-icon {
+    fill: white;
+}
+
+.menu button.button-selected .tool-bar-menu-icon.logs-icon {
+    fill: black;
+    stroke: white; 
+}
+
+/* CONTENT STYLING */
+.content {
+    flex-grow: 1;
+    transition: all 0.2s;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.content.collapsed {
+    width: 0px;   
+    flex-grow: 0;
+}
+
+.content-area {
+    height: 18.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem 0.25rem;
+    width: 100%;
+}
+
+.content-title {
+    flex-grow: 1;
+}
+
+.content-title p {
+    font-weight: 700;
+    /* font-size: clamp(0.8rem, 2vw ,1rem); */
+    width: 1rem;
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+.content-main {
+    flex-grow: 1;
+    overflow-y: auto;        
+    /* overflow-x: hidden; */
+    scroll-behavior: smooth;
+    scrollbar-width: none;        
+    -ms-overflow-style: none; 
+}
+
+.content-main ::-webkit-scrollbar {
+    display: none;                
+}
+
+.content-main .menu-unselected {
+    display: none;
+}
+
+/* HOME MENU STYLING */
+.home-title {
+    /* font-size: clamp(1.2rem, 2vw, 1.6rem); */
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'HubotSans', sans-serif;
+    font-weight: 700; 
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0.5rem 0;
+}
+
+.home-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.companion-status {
+    background-color: black;
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    /* font-size: clamp(0.4rem, 1vw ,0.8rem); */
+    /* font-size: clamp(0.6rem, 1.5vw, 0.8rem) */
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+
+.companion-status.active {
+    background-color: rgba(0, 0, 255, 0.5);
+    box-shadow: inset 0 0.25rem 0.25rem rgba(0,0,0,0.25);
+}
+
+/* @media (max-width: 1280px) {
+    .home-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .home-controls {
+        flex-direction: column;
+        gap: 4rem;
+    }
+} */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Track */
+.slider {
+    position: absolute;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 26px;
+    transition: background-color 0.2s ease;
+}
+
+/* Knob */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+input:checked + .slider {
+    background-color: #000000; 
+}
+
+input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* CONFIGURATION MENU STYLING */
+.configuration {
+    padding: 2rem 1rem 0;
+}
+
+.configuration label {
+    /* font-size: clamp(0.8rem, 2vw, 1rem); */
+    font-size: 1rem;
+}
+
+.configuration input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0 5px;
+}
+
+/* LOG MENU STYLING */
+.logs {
+    padding: 1rem 0.5rem 0;
+    height: 100%;
+}
+
+.log {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+    overflow-wrap: break-word;
+}
+
+.log-timestamp {
+    margin-bottom: 4px;
+}
+
+.log-timestamp p {
+    /* font-size: 0.8rem; */
+    /* font-size: clamp(0.6rem, 1.6vw, 0.8rem); */
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.log-text p {
+    /* font-size: clamp(0.8rem, 2vw, 1rem); */
+    font-size: 0.9rem;
+}
+
+.log-fail {
+    color: #ff3b3b;
+}
+
+.log-success {
+    color: #16a34a;
+}
+
+.completion-time p {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 255, 0.5);
+}
+
+.completion-time.exclude p{
+    display: none;
+}
+
+.completion-time-text {
+    font-weight: 700;
+}
+
+/* STATUS BOX STYLING */
+.status {
+    width: 100%;
+    padding: 1rem;
+}
+
+.status-title {
+    font-weight: bold;
+    /* font-size: clamp(0.8rem, 2vw ,1rem); */
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 1px;
+}
+
+.status-text {
+    /* font-size: clamp(0.7rem, 1.8vw , 0.9rem); */
+    font-size: 0.85rem;
+}
+
+.status {
+    white-space: nowrap; 
+    word-wrap: normal; 
+    overflow: hidden;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="browserBar.css">
+    <title>Browser Bar</title>
+</head>
+<body>
+    <div id="browser-bar">
+        <div class="tool-bar">
+            <div class="buttons-left">
+                <button 
+                    type="button"
+                    class="browser-actions-button"
+                    id="back-button"
+                    aria-label="Back"
+                    title="Back"
+                >
+                    <svg class="browser-actions-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1H17M1 1V17M1 1L17 17" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <button
+                    type="button"
+                    class="browser-actions-button"
+                    id="forward-button"
+                    aria-label="Forward"
+                    title="Forward"
+                >
+                    <svg class="browser-actions-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.7072 1H0.707153M16.7072 1V17M16.7072 1L0.707153 17" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <button 
+                    type="button"
+                    class="browser-actions-button"
+                    id="reload-button"
+                    aria-label="Reload"
+                    title="Reload"
+                >
+                    <svg class="browser-actions-icon" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 10.6V16C17 16.5523 16.5523 17 16 17H2C1.44772 17 1 16.5523 1 16V2C1 1.44772 1.44772 1 2 1H16C16.5523 1 17 1.44772 17 2V7.4M17 7.4L13 3.4M17 7.4L21 3.4" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="app-title">
+                <p>Browsing Companion</p>
+            </div>
+
+            <div class="buttons-right">
+                <button 
+                    type="button"
+                    class="browser-actions-button"
+                    id="minimize-button"
+                    aria-label="Minimize"
+                    title="Minimize"
+                >
+                    <svg class="browser-actions-icon minimize-icon" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 1H16" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <button 
+                    type="button"
+                    class="browser-actions-button"
+                    id="maximize-button"
+                    aria-label="Maximize"
+                    title="Maximize"
+                >
+                    <svg class="browser-actions-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 1H1V17H17V1Z" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <button 
+                    type="button"
+                    class="browser-actions-button"
+                    id="close-button"
+                    aria-label="Close"
+                    title="Close"
+                >
+                    <svg class="browser-actions-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.707031 16.7072L8.70703 8.70715M16.707 0.707153L8.70703 8.70715M8.70703 8.70715L0.707031 0.707153M8.70703 8.70715L16.707 16.7072" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="tab-bar">
+            <div class="tabs-group">
+                <!-- Add Tabs Here -->
+
+                <button 
+                    type="button"
+                    class="add-tab-button"
+                    id="add-tab-button"
+                    aria-label="Add Tab"
+                    title="Add Tab"
+                > 
+                    <svg class="browser-actions-icon add-tab-icon" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 5H5M10 5H5M5 5V0M5 5V10" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="browserBar.js"></script>
+</body>
+</html>
